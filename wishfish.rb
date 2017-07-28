@@ -1,7 +1,7 @@
 class Wishfish < Formula
   desc "SSH wrapper that binds to a specific network interface"
   homepage "https://github.com/claui/wishfish"
-  url "https://github.com/claui/wishfish/archive/v0.0.2.tar.gz"
+  url "https://github.com/claui/wishfish/archive/#{version}.tar.gz"
   version "0.0.2"
   sha256 "57ba2044eff81fadbd4e80db06cdc984f82e797038f0a1eeca24255518267ac7"
 
