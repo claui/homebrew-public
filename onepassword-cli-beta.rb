@@ -6,6 +6,22 @@ class OnepasswordCliBeta < Formula
 
   def install
     bin.install "op"
+    pkgshare.install "op.sig"
+  end
+
+  def caveats; <<-EOS.undent
+    To verify AgileBits’s signature, run one of the following:
+
+      gpg --verify \\
+        #{HOMEBREW_PREFIX}/share/onepassword-cli-beta/op.sig \\
+        "$(which op)"
+
+    or alternatively:
+
+      keybase pgp verify \\
+        -d #{HOMEBREW_PREFIX}/share/onepassword-cli-beta/op.sig \\
+        -i "$(which op)" -S 1password
+    EOS
   end
 
   test do
