@@ -4,6 +4,8 @@ class Wishfish < Formula
   url "https://github.com/claui/wishfish/archive/v0.0.2.tar.gz"
   sha256 "57ba2044eff81fadbd4e80db06cdc984f82e797038f0a1eeca24255518267ac7"
 
+  bottle :unneeded
+
   def install
     %w[wishfish ipv6_address].each do |bin_name|
       (bin/bin_name).write <<-EOS.undent
