@@ -1,15 +1,15 @@
 class OnepasswordCliBeta < Formula
   desc "1Password command-line interface, public beta"
   homepage "https://app-updates.agilebits.com/product_history/CLI"
-  url "https://cache.agilebits.com/dist/1P/op/pkg/v0.1.1/op_darwin_amd64_v0.1.1.zip"
-  sha256 "95eb4cfd62a5bf1eab99d4acb24ab9229fc4dfb16a931dd7f9628f88b54c1fc7"
+  url "https://cache.agilebits.com/dist/1P/op/pkg/v0.2/op_darwin_amd64_v0.2.zip"
+  sha256 "a3d36a67fa3cdd6c6869d2c0e3d2d369e75a1f6ce3724454f467db0944c7a8ba"
 
   def install
     bin.install "op"
     pkgshare.install "op.sig"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     To verify AgileBits’s signature, run one of the following:
 
       gpg --verify \\
