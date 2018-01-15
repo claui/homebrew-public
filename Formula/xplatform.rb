@@ -1,8 +1,8 @@
 class Xplatform < Formula
   desc "Platform-independent aliases for GNU utilities"
   homepage "https://bitbucket.org/clauii/xplatform"
-  url "https://bitbucket.org/clauii/xplatform/get/v0.0.7.tar.gz"
-  sha256 "2d2cb0840149eea280f393cc03cde61abf1f1631536b64e7459b49c4e82b80c3"
+  url "https://bitbucket.org/clauii/xplatform/get/v0.0.8.tar.gz"
+  sha256 "26fbd33bdc35c889b1ed10ac9a16563f78bd8b7900f02499841a828ed3398538"
   head "https://bitbucket.org/clauii/xplatform.git"
 
   bottle :unneeded
@@ -12,6 +12,7 @@ class Xplatform < Formula
   depends_on "gcal"
   depends_on "gnu-getopt"
   depends_on "gnu-sed"
+  depends_on "gpatch"
 
   def install
     bin_names = %w[mcal platform_id]
@@ -21,6 +22,7 @@ class Xplatform < Formula
       :exclude => ["gcal2txt"])
     bin_names.concat %w[xgetopt] # gnu-getopt
     bin_names.concat xplatform_filenames_for("gnu-sed")
+    bin_names.concat %w[xpatch] # gpatch
 
     bin_names.each do |bin_name|
       (bin/bin_name).write <<-EOS.undent
@@ -35,6 +37,7 @@ class Xplatform < Formula
       "libexec/mcal.bash",
       "libexec/platform_id.bash",
       "libexec/xgetopt.bash",
+      "libexec/xpatch.bash",
       "libexec/xplatform_gnu.bash",
       "libexec/xplatform_with_mac_dir.bash",
     ]
