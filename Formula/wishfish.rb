@@ -8,7 +8,7 @@ class Wishfish < Formula
 
   def install
     %w[wishfish ipv6_address].each do |bin_name|
-      (bin/bin_name).write <<-EOS.undent
+      (bin/bin_name).write <<~EOS
         #!/bin/bash
         exec "#{libexec/bin_name}" "$@"
       EOS

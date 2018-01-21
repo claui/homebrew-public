@@ -25,7 +25,7 @@ class Xplatform < Formula
     bin_names.concat %w[xpatch] # gpatch
 
     bin_names.each do |bin_name|
-      (bin/bin_name).write <<-EOS.undent
+      (bin/bin_name).write <<~EOS
         #!/bin/bash
         exec "#{libexec/bin_name}" "$@"
       EOS
