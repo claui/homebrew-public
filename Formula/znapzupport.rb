@@ -1,8 +1,8 @@
 class Znapzupport < Formula
   desc "Collection of CLI helpers for ZnapZend"
   homepage "https://github.com/claui/znapzupport"
-  url "https://github.com/claui/znapzupport/archive/v0.0.1.tar.gz"
-  sha256 "56849edc69056f07ebda4945c5eeda728c115ba986e658c65eded4313034c8a9"
+  url "https://github.com/claui/znapzupport/archive/v0.0.2.tar.gz"
+  sha256 "67d6781f156f4befc25a7417897fcdc7ea5fcae102fbcc1852c2d23dae36cf44"
 
   bottle :unneeded
 
