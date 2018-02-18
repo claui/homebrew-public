@@ -1,10 +1,12 @@
 class Znapzupport < Formula
   desc "Collection of CLI helpers for ZnapZend"
   homepage "https://github.com/claui/znapzupport"
-  url "https://github.com/claui/znapzupport/archive/v0.0.4.tar.gz"
-  sha256 "49e4b91f721154b7c4cfe364143645824eaceea2148f8b9101b66900e3747653"
+  url "https://github.com/claui/znapzupport/archive/v0.0.6.tar.gz"
+  sha256 "5b8666f288c6681ce4dbd896fde3f513a53762a953caea9d7a96ff17807d9cb3"
 
   bottle :unneeded
+
+  depends_on "xplatform"
 
   def install
     bin_names = %w[znaphodl znaphodlz znaplizt zpoolz]
