@@ -24,8 +24,8 @@ class Wishfish < Formula
 
   test do
     assert_match /^Usage:\s*wishfish/,
-      shell_output("#{bin}/wishfish; [[ $? -eq 1 ]]")
+      shell_output("#{bin}/wishfish; [ $? -eq 1 ]")
     assert_match /^Usage:\s*ipv6_address/,
-      shell_output("#{bin}/ipv6_address; [[ $? -eq 1 ]]")
+      shell_output("#{bin}/ipv6_address; [ $? -eq 1 ]")
   end
 end
