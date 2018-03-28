@@ -1,8 +1,8 @@
 class Xplatform < Formula
   desc "Platform-independent aliases for GNU utilities"
   homepage "https://bitbucket.org/clauii/xplatform"
-  url "https://bitbucket.org/clauii/xplatform/get/v0.0.10.tar.gz"
-  sha256 "6a5535b4e242d61d3087f7cdd1d912c2660a018ccd5bfc78a1f5b3a7f4c89f02"
+  url "https://bitbucket.org/clauii/xplatform/get/v0.0.11.tar.gz"
+  sha256 "94fd9ccb900d6f0adeb360458292863bf7d079c2f70818a977fa6e1b72e03ba8"
   head "https://bitbucket.org/clauii/xplatform.git"
 
   bottle :unneeded
@@ -13,6 +13,7 @@ class Xplatform < Formula
   depends_on "gcal" => :recommended
   depends_on "gnu-getopt" => :recommended
   depends_on "gnu-sed" => :recommended
+  depends_on "gnu-tar" => :recommended
   depends_on "gpatch" => :optional # May shadow /usr/bin/patch
   depends_on "grep" => :recommended
 
@@ -24,6 +25,7 @@ class Xplatform < Formula
       ["gcal", :include => ["mcal"], :exclude => ["gcal2txt"]],
       ["gnu-getopt", :name_prefix => ""],
       "gnu-sed",
+      "gnu-tar",
       ["gpatch", :name_prefix => ""],
       "grep",
     ].flat_map do |package_name, options = {}|
@@ -101,6 +103,13 @@ class Xplatform < Formula
       (testpath/"test.txt").write "Hello world!"
       system bin/"xsed", "-i", "s/world/World/g", "test.txt"
       assert_match /Hello World!/, File.read("test.txt")
+    end
+
+    if build.with? "gnu-tar"
+      system bin/"xtar", "-c", "-f", testpath/"test.tar.xz",
+        "-P", "--no-xattr", "--xz", "/bin/bash"
+      assert_match %r{/bin/bash},
+        shell_output("#{bin}/xtar -t -f #{testpath}/test.tar.xz -P")
     end
 
     if build.with? "gpatch"
