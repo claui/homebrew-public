@@ -1,8 +1,8 @@
 class AmazonUtils < Formula
   desc "Collection of CLI tools to improve UX on Amazon’s retail websites"
   homepage "https://github.com/claui/amazon-utils"
-  url "https://github.com/claui/amazon-utils/archive/v0.0.4.tar.gz"
-  sha256 "e0a9b2585e90204a94c955f3c0560ea0d23a849531221d95d909e15a9ddd097f"
+  url "https://github.com/claui/amazon-utils/archive/v0.0.5.tar.gz"
+  sha256 "886a4bf71966ac1b4cb25caa6286ea005d5d6982ae62178ddb2d39edd8bd44ee"
 
   bottle :unneeded
 
