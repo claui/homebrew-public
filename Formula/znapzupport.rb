@@ -1,11 +1,12 @@
 class Znapzupport < Formula
   desc "Collection of CLI helpers for ZnapZend"
   homepage "https://github.com/claui/znapzupport"
-  url "https://github.com/claui/znapzupport/archive/v0.0.13.tar.gz"
-  sha256 "78a6e7b715841e5115c157d802c36e10655233abf79411e09146999b50d8b03d"
+  url "https://github.com/claui/znapzupport/archive/v0.1.0.tar.gz"
+  sha256 "2bf30370ff01d519bfc057a4da34654566f990a1c0fb86e0de6e1e5f7de7c309"
 
   bottle :unneeded
 
+  depends_on "procmail"
   depends_on "xplatform"
 
   def install
