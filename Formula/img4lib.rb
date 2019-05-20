@@ -6,9 +6,8 @@ class Img4lib < Formula
       :revision => "26b0709c68efe1ec3cd9c491635810ad3f657b45"
 
   def install
-    inreplace "Makefile", /^.*\b(COMMONCRYPTO)\b =.*/, "\\1 = 1"
     system "make", "-C", "lzfse"
-    system "make"
+    system "make", "COMMONCRYPTO=1"
     bin.install "img4"
   end
 end
