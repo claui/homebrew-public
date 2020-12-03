@@ -1,4 +1,4 @@
-class Srm < Formula
+class SimpleRomManager < Formula
   include Language::Python::Virtualenv
 
   desc "Verify console and arcade ROMS against published ROM set DAT files"
