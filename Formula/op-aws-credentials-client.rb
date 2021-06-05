@@ -51,7 +51,9 @@ class OpAwsCredentialsClient < Formula
   end
 
   test do
-    assert_match(/The account details you entered aren't saved on this device/,
-      shell_output("#{bin}/op-aws-credentials-client foo bar baz qux"))
+    _, stderr, = Open3.capture3(
+      "#{bin}/op-aws-credentials-client", "foo", "bar", "baz", "qux"
+    )
+    assert_match(/The account details you entered aren't saved on this device/, stderr)
   end
 end
