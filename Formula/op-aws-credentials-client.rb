@@ -4,9 +4,10 @@ class OpAwsCredentialsClient < Formula
   desc "Password client script to fetch AWS credentials from 1Password"
   homepage "https://github.com/claui"
   url "file:///dev/null"
-  version "1.0.1"
+  version "1.0.2"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
+  depends_on "jq"
   depends_on OnePasswordCliRequirement
 
   def install
@@ -39,7 +40,7 @@ class OpAwsCredentialsClient < Formula
         --fields="${ACCESS_KEY_ID_FIELDNAME},${SECRET_ACCESS_KEY_FIELDNAME}" \\
         --vault="${OP_VAULT}" \\
         "${OP_ITEM}" \\
-        | /usr/local/bin/jq "$(/bin/cat << EOF
+        | #{Formula["jq"].opt_bin/"jq"} "$(/bin/cat << EOF
           {
             Version: 1,
             AccessKeyId: ."${ACCESS_KEY_ID_FIELDNAME}",
