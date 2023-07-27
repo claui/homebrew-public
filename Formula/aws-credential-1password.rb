@@ -32,9 +32,7 @@ class AwsCredential1password < Formula
   end
 
   test do
-    _, stderr, = Open3.capture3(
-      "#{bin}/aws-credential-1password", "foo", "bar", "baz", "qux"
-    )
-    assert_match(/The account details you entered aren't saved on this device/, stderr)
+    _, stderr, = Open3.capture3("#{bin}/aws-credential-1password")
+    assert_match(/Usage:\n\taws-credential-1password/, stderr)
   end
 end
