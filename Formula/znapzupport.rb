@@ -4,8 +4,6 @@ class Znapzupport < Formula
   url "https://github.com/claui/znapzupport/archive/v0.1.3.tar.gz"
   sha256 "db7bbd5b2287a9e501c3933521427da14e26531ad2b16221839f2faa6eb5ae78"
 
-  bottle :unneeded
-
   depends_on "procmail"
   depends_on "xplatform"
 

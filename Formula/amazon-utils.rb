@@ -4,8 +4,6 @@ class AmazonUtils < Formula
   url "https://github.com/claui/amazon-utils/archive/v0.0.8.tar.gz"
   sha256 "479fe4427f532a6b1b045352d89f2431aeeedddcec2965a6973ba842848f61d6"
 
-  bottle :unneeded
-
   def install
     system "make"
 

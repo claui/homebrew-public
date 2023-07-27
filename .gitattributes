@@ -5,4 +5,5 @@
 *.diff          text eol=lf
 *.patch         text eol=lf
 
+*.json          text eol=lf
 *.rb            text eol=lf
