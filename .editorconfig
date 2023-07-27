@@ -16,5 +16,8 @@ indent_size = 16
 end_of_line = lf
 trim_trailing_whitespace = false
 
+[*.json]
+indent_size = 2
+
 [*.rb]
 indent_size = 2

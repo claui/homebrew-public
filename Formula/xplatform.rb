@@ -5,8 +5,6 @@ class Xplatform < Formula
   sha256 "94fd9ccb900d6f0adeb360458292863bf7d079c2f70818a977fa6e1b72e03ba8"
   head "https://bitbucket.org/clauii/xplatform.git"
 
-  bottle :unneeded
-
   depends_on "coreutils" => :recommended
   depends_on "findutils" => :recommended
   depends_on "gawk" => :optional # May shadow /usr/bin/awk
